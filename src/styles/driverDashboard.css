@@ -1,0 +1,304 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.driver-dashboard {
+  padding: 30px 15px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f3f8ff, #e2edff);
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  color: #1e2a38;
+}
+
+/* Buttons - Shared */
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Primary Buttons */
+.rent-btn {
+  background: linear-gradient(145deg, #4e9fff, #3a78d0);
+  color: #fff;
+}
+
+.logout-btn {
+  background: linear-gradient(145deg, #ff6b6b, #d43c3c);
+  color: #fff;
+}
+
+/* Driver Profile */
+.driver-profile {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.driver-profile img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4e9fff;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.driver-info {
+  flex: 1;
+}
+
+.driver-info p {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* Rented Vehicles Section */
+.rented-vehicles {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+}
+
+.rented-vehicles h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #1e2a38;
+}
+
+/* Vehicle Grid & Cards */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.vehicle-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+}
+
+.vehicle-card figure {
+  margin: 0;
+  position: relative;
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover img {
+  transform: scale(1.05);
+}
+
+.vehicle-card figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px;
+}
+
+/* Vehicle Details */
+.vehicle-details {
+  padding: 16px 18px;
+  font-size: 15px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Vehicle Actions */
+.vehicle-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.vehicle-actions button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Action Button Styles */
+.view-btn {
+  background: linear-gradient(to right, #20c997, #198754);
+  color: #fff;
+}
+
+.edit-btn {
+  background: linear-gradient(to right, #ffc107, #e0a800);
+  color: #212529;
+}
+
+.delete-btn {
+  background: linear-gradient(to right, #dc3545, #bd2130);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vehicle-card {
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Responsive Grid Adjustments */
+@media (min-width: 576px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .driver-profile {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .vehicle-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .vehicle-actions button {
+    flex: 1 1 calc(33.333% - 10px);
+  }
+}
+/* Edit Button */
+.edit-btn {
+  background: linear-gradient(135deg, #ffd54f, #ffa000);
+  color: #212529;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #ffca28, #ff8f00);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 193, 7, 0.6);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: linear-gradient(135deg, #ff6b6b, #e53935);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(244, 67, 54, 0.6);
+}
+/* Ensure visible text color and consistent style for select */
+.vehicle-form select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff; /* or #f9f9f9 */
+  color: #333;
+  margin-bottom: 1rem;
+  appearance: none;
+}
+
+/* Optional: style the dropdown arrow in select fields (for modern browsers) */
+.vehicle-form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Ensure option text is visible */
+.vehicle-form select option {
+  color: #333;
+  background-color: #fff;
+}
